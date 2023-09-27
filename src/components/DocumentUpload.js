@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
 
-function DocumentUpload() {
+function DocumentUpload({ onSubmit }) {
   const [state, setState] = useState({
-    nabh: true,
-    nabl: true,
+    nabh: false,
+    nabl: false,
     na: false,
     otherDocument: "",
     certificateNumber: "",
@@ -27,9 +27,14 @@ function DocumentUpload() {
     console.log(state);
   };
 
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(state);
+  };
+
   return (
     <MainLayout>
-      <form>
+      <form className="row row-gap-3 g-3" onSubmit={handleFormSubmit}>
         <h3>Document Upload</h3>
         <div className="row">
           <div className="col">
@@ -66,14 +71,18 @@ function DocumentUpload() {
           </div>
 
           <div className="col">
-            <label className="form-label">other</label>
-            <input
-              className="form-control"
-              type="text"
-              name="otherDocument"
-              value={state.otherDocument}
-              onChange={handleChange}
-            ></input>
+            <div className="row">
+              <label className="col-sm-2 form-label">other</label>
+              <div className="col-sm-10">
+                <input
+                  className="form-control"
+                  type="text"
+                  name="otherDocument"
+                  value={state.otherDocument}
+                  onChange={handleChange}
+                ></input>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -158,9 +167,11 @@ function DocumentUpload() {
             ></input>
           </div>
         </div>
-        <Link to="/HospitalInformation" className="btn btn-primary">
-          Save and Back
-        </Link>
+        <div className="col">
+          <Link to="/HospitalInformation" className="btn btn-primary">
+            Save and Back
+          </Link>
+        </div>
       </form>
     </MainLayout>
   );

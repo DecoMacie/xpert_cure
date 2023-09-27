@@ -32,93 +32,132 @@ function HospitalInformation({ onSubmit }) {
 
   return (
     <MainLayout>
-      <form onSubmit={handleFormSubmit}>
+      <form className="row row-gap-3 g-3" onSubmit={handleFormSubmit}>
         <h3>Hospital</h3>
-        <div>
-          <label>Hospital Name</label>
-          <input
-            type="text"
-            name="hospitalName"
-            value={state.hospitalName}
-            onChange={handleChange}
-          ></input>
-          <label>mobile</label>
-          <input
-            type="number"
-            name="mobileHospital"
-            value={state.mobileHospital}
-            onChange={handleChange}
-          ></input>
-          <label>Website add</label>
-          <input
-            type="url"
-            name="websiteAdd"
-            value={state.websiteAdd}
-            onChange={handleChange}
-          ></input>
+        <div className="row">
+          <div className="col">
+            <label className="form-label">Hospital Name</label>
+            <input
+              className="form-control"
+              type="text"
+              name="hospitalName"
+              value={state.hospitalName}
+              onChange={handleChange}
+            ></input>
+          </div>
+
+          <div className="col">
+            <label className="form-label">mobile</label>
+            <input
+              className="form-control"
+              type="number"
+              name="mobileHospital"
+              value={state.mobileHospital}
+              onChange={handleChange}
+            ></input>
+          </div>
+
+          <div className="col">
+            <label className="form-label">Website add</label>
+            <input
+              className="form-control"
+              type="url"
+              name="websiteAdd"
+              value={state.websiteAdd}
+              onChange={handleChange}
+            ></input>
+          </div>
         </div>
-        <div>
-          <label>Address Line 1</label>
-          <input
-            type="text"
-            name="addressLine1"
-            value={state.addressLine1}
-            onChange={handleChange}
-          ></input>
-          <label>Address Line 2</label>
-          <input
-            type="text"
-            name="addressLine2"
-            value={state.addressLine2}
-            onChange={handleChange}
-          ></input>
-          <label>Address Line 3</label>
-          <input
-            type="text"
-            name="addressLine3"
-            value={state.addressLine3}
-            onChange={handleChange}
-          ></input>
+        <div className="row">
+          <div className="col">
+            <label className="form-label">Address Line 1</label>
+            <input
+              className="form-control"
+              type="text"
+              name="addressLine1"
+              value={state.addressLine1}
+              onChange={handleChange}
+            ></input>
+          </div>
+
+          <div className="col">
+            <label className="form-label">Address Line 2</label>
+            <input
+              className="form-control"
+              type="text"
+              name="addressLine2"
+              value={state.addressLine2}
+              onChange={handleChange}
+            ></input>
+          </div>
+
+          <div className="col">
+            <label className="form-label">Address Line 3</label>
+            <input
+              className="form-control"
+              type="text"
+              name="addressLine3"
+              value={state.addressLine3}
+              onChange={handleChange}
+            ></input>
+          </div>
         </div>
+
         <h3>Owner Doctor</h3>
-        <div>
-          <label>Name</label>
-          <input
-            type="text"
-            name="doctorName"
-            value={state.doctorName}
-            onChange={handleChange}
-          ></input>
-          <label>Designation</label>
-          <input
-            type="text"
-            name="designation"
-            value={state.designation}
-            onChange={handleChange}
-          ></input>
-          <label>Mobile</label>
-          <input
-            type="number"
-            name="mobileDoctor"
-            value={state.mobileDoctor}
-            onChange={handleChange}
-          ></input>
+        <div className="row">
+          <div className="col">
+            <label className="form-label">Name</label>
+            <input
+              className="form-control"
+              type="text"
+              name="doctorName"
+              value={state.doctorName}
+              onChange={handleChange}
+            ></input>{" "}
+          </div>
+
+          <div className="col">
+            <label className="form-label">Designation</label>
+            <input
+              className="form-control"
+              type="text"
+              name="designation"
+              value={state.designation}
+              onChange={handleChange}
+            ></input>{" "}
+          </div>
+
+          <div className="col">
+            <label className="form-label">Mobile</label>
+            <input
+              className="form-control"
+              type="number"
+              name="mobileDoctor"
+              value={state.mobileDoctor}
+              onChange={handleChange}
+            ></input>
+          </div>
         </div>
-        <div>
-          <label>Email</label>
-          <input
-            type="email"
-            name="emailDoctor"
-            value={state.emailDoctor}
-            onChange={handleChange}
-          ></input>
+        <div className="row">
+          <div className="col-4">
+            <label className="form-label">Email</label>
+            <input
+              className="form-control"
+              type="email"
+              name="emailDoctor"
+              value={state.emailDoctor}
+              onChange={handleChange}
+            ></input>
+          </div>
         </div>
-        <Link
-          to="/HospitalInformation/DocumentUpload"
-          className="btn btn-primary"
-        >
-          Save and Next
-        </Link>
+        <div className="col">
+          <Link
+            to="/HospitalInformation/DocumentUpload"
+            className="btn btn-primary"
+          >
+            Save and Next
+          </Link>
+        </div>
       </form>
     </MainLayout>
   );
